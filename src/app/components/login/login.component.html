@@ -1,0 +1,22 @@
+<form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  
+  <h2>PlaceMa, Recruiters Portal</h2>
+  
+  <hr />
+
+  <div class="form-group">
+  <input type="text"  formControlName="companyName" placeholder="Company Name" />
+  </div>
+  <div class="form-group">
+  <input type="password" formControlName="key" placeholder="Password" />
+  </div>
+  <div class="form-group">
+  <label *ngIf="edited" class="errorMessages">Invalid Login</label>
+  </div>  
+  <div class="form-group">
+  <button type="submit" class="button"> <span>Log In </span> </button> 
+  </div>      
+
+</form>
+
+<router-outlet></router-outlet>
