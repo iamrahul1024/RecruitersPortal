@@ -42,7 +42,7 @@
 							</div>
 						</div>
 
-						<div class="row" *ngFor="let dataElement of data">
+						<a class="row" (click)="studentSelect(dataElement.prn)" *ngFor="let dataElement of data" >
 							<div class="cell" data-title="PRN ">
 								{{dataElement.prn}}
 							</div>
@@ -68,7 +68,7 @@
 								{{dataElement.backlogs}}
 							</div>
 						
-						</div>
+						</a>
 
 						
 

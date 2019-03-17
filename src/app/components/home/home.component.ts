@@ -29,6 +29,11 @@ export class HomeComponent implements OnInit {
      })
   }
 
+  studentSelect(prn){
+    console.log(prn);
+    this.router.navigate(['/profile'],{queryParams:{studentId:prn}});
+  }
+
 
 
 }
