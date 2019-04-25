@@ -100,7 +100,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="nav-tabis">
                   <ul class="isop-filter nav nav-pills">
-                    <li role="presentation"><a href="#about-me" class="active"><i class="icon-user"></i> ABOUT ME</a></li>
+                    <li role="presentation"><a  class="active"><i class="icon-user"></i> ABOUT ME</a></li>
                     <li role="presentation"><a (click)="openResume()"><i class="icon-book-open"></i>RESUME</a></li>
                 </ul>
                 </div>
@@ -120,51 +120,43 @@
                     <section class="about-me padding-top-10"> 
   
                       <!-- I’m Web Designer -->
-                      <h5 class="tittle">I’m Web Designer</h5>
-                      <div class="padding-20">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. <br>
-                          <br>
-                          Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. <br>
-                          <br>
-                        </p>
-                      </div>
                       
-                      <!-- Projects -->
-                      <h5 class="tittle">Projects</h5>
-                      <div class="row padding-20 margin-top-50"> 
-                      </div>
+
+
 
                         
                        
                       <!-- Skills -->
-                      <h5 class="tittle">Skills</h5>
+                      <h5 class="tittle">Emotional Quotient, BIG 5</h5>
                       
                       <!-- Sound Engineering -->
-                      <div class="panel-group accordion padding-20" id="accordion">
+                      <div *ngIf="isEQScore; else elseBlock" class="panel-group accordion padding-20" id="accordion">
                         <div class="panel panel-default">
                           <div class="row">
                             <div class="col-sm-4"> 
                               <!-- PANEL HEADING -->
                               <div class="panel-heading">
-                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed"> Photoshop</a> </h4>
+                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed"> Openness </a> </h4>
                               </div>
                             </div>
                             
                             <!-- Skillls Bars -->
                             <div class="col-sm-8">
                               <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"> <span class="sr-only">60% Complete</span> </div>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" [style.width.%]=oScore> <span>{{oScore | number:0 }}% </span> </div>
                               </div>
                               
                               <!-- Skillls Text -->
                               <div id="collapseOne" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem.</p>
+                                  <p> Openness reflects the degree of intellectual curiosity, creativity and a preference for novelty and variety a person has</p>
+                                  <p>Appreciation for art, emotion, adventure, unusual ideas, curiosity, and variety of experience.</p>
+                                  <p>It is also described as the extent to which a person is imaginative or independent and depicts a personal preference for a variety of activities over a strict routine</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </div>  
                         
                         <!-- Business Administration -->
                         
@@ -173,20 +165,21 @@
                             <div class="col-sm-4"> 
                               <!-- PANEL HEADING -->
                               <div class="panel-heading">
-                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsetwo" class="collapsed"> Dreamviewer</a> </h4>
+                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsetwo" class="collapsed"> Conscientiousness </a> </h4>
                               </div>
                             </div>
                             
                             <!-- Skillls Bars -->
                             <div class="col-sm-8">
                               <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> <span class="sr-only">60% Complete</span> </div>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" [style.width.%]=cScore><span>{{cScore | number:0 }}% </span> </div>
                               </div>
                               
                               <!-- Skillls Text -->
                               <div id="collapsetwo" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem.</p>
+                                <p> Tendency to be organized and dependable, show self-discipline, act dutifully, aim for achievement, and prefer planned rather than spontaneous behavior. </p>
+                                <p>High conscientiousness is often perceived as being stubborn and focused. Low conscientiousness is associated with flexibility and spontaneity, but can also appear as sloppiness and lack of reliability.</p>
                                 </div>
                               </div>
                             </div>
@@ -199,26 +192,86 @@
                             <div class="col-sm-4"> 
                               <!-- PANEL HEADING -->
                               <div class="panel-heading">
-                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsethree" class="collapsed"> HTML5/CSS3</a> </h4>
+                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsethree" class="collapsed"> Extraversion </a> </h4>
                               </div>
                             </div>
                             
                             <!-- Skillls Bars -->
                             <div class="col-sm-8">
                               <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> <span class="sr-only">60% Complete</span> </div>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" [style.width.%]=eScore> <span>{{eScore | number:0 }}% </span></div>
                               </div>
                               
                               <!-- Skillls Text -->
                               <div id="collapsethree" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem.</p>
+                                  <p>Energetic, sociability and the tendency to seek stimulation in the company of others, and talkativeness. </p>
+                                  <p>High extraversion is often perceived as attention-seeking and domineering</p>
+                                  <p>Low extraversion causes a reserved, reflective personality, which can be perceived as aloof or self-absorbed.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- HTML -->
+                        <div class="panel panel-default">
+                          <div class="row">
+                            <div class="col-sm-4"> 
+                              <!-- PANEL HEADING -->
+                              <div class="panel-heading">
+                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour" class="collapsed"> Agreeableness  </a> </h4>
+                              </div>
+                            </div>
+                            
+                            <!-- Skillls Bars -->
+                            <div class="col-sm-8">
+                              <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" [style.width.%]=aScore> <span>{{ aScore | number:0 }}% </span> </div>
+                              </div>
+                              
+                              <!-- Skillls Text -->
+                              <div id="collapsefour" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                <p>Tendency to be compassionate and cooperative rather than suspicious and antagonistic towards others.</p>
+                                <p>It is also a measure of one's trusting and helpful nature, and whether a person is generally well-tempered or not. High agreeableness is often seen as naive or submissive</p>
+                                <p>Low agreeableness personalities are often competitive or challenging people, which can be seen as argumentative or untrustworthy.</p>
+                              </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                          <!-- HTML -->
+                        <div class="panel panel-default">
+                          <div class="row">
+                            <div class="col-sm-4"> 
+                              <!-- PANEL HEADING -->
+                              <div class="panel-heading">
+                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefive" class="collapsed"> Neuroticism </a> </h4>
+                              </div>
+                            </div>
+                            
+                            <!-- Skillls Bars -->
+                            <div class="col-sm-8">
+                              <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" [style.width.%]=nScore> <span>{{ nScore | number:0 }}% </span> </div>
+                              </div>
+                              
+                              <!-- Skillls Text -->
+                              <div id="collapsefive" class="panel-collapse collapse">
+                                <div class="panel-body">
+                               <p>Tendency to be prone to psychological stress</p>
+                               <p>The tendency to experience unpleasant emotions easily, such as anger, anxiety, depression, and vulnerability</p>
+                               <p>High stability manifests itself as a stable and calm personality, but can be seen as uninspiring and unconcerned</p>
+                               <p> Low stability manifests as the reactive and excitable personality often found in dynamic individuals, but can be perceived as unstable or insecure</p>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
+                      <ng-template #elseBlock><p> No Scores to show.</p></ng-template>
                     </section>
                   </div>
                 </div>
